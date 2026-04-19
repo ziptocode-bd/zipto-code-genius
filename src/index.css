@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 244 100% 97%;
+    --foreground: 248 53% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 248 53% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 248 53% 18%;
+
+    --primary: 244 98% 69%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 244 100% 94%;
+    --secondary-foreground: 248 53% 18%;
+
+    --muted: 244 20% 92%;
+    --muted-foreground: 245 16% 50%;
+
+    --accent: 153 58% 53%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 244 100% 94%;
+    --input: 244 100% 94%;
+    --ring: 244 98% 69%;
+
+    --radius: 0.75rem;
+
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 244 98% 69%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 244 100% 94%;
+    --sidebar-accent-foreground: 248 53% 18%;
+    --sidebar-border: 244 100% 94%;
+    --sidebar-ring: 244 98% 69%;
+  }
+
+  .dark {
+    --background: 240 20% 8%;
+    --foreground: 240 20% 92%;
+
+    --card: 240 18% 12%;
+    --card-foreground: 240 20% 92%;
+
+    --popover: 240 18% 12%;
+    --popover-foreground: 240 20% 92%;
+
+    --primary: 244 98% 69%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 244 30% 20%;
+    --secondary-foreground: 240 20% 92%;
+
+    --muted: 240 15% 18%;
+    --muted-foreground: 240 10% 60%;
+
+    --accent: 153 58% 53%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 15% 20%;
+    --input: 240 15% 20%;
+    --ring: 244 98% 69%;
+
+    --sidebar-background: 240 18% 10%;
+    --sidebar-foreground: 240 20% 92%;
+    --sidebar-primary: 244 98% 69%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 244 30% 20%;
+    --sidebar-accent-foreground: 240 20% 92%;
+    --sidebar-border: 240 15% 20%;
+    --sidebar-ring: 244 98% 69%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+
+  input, textarea, [contenteditable] {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(244 98% 69%), hsl(270 80% 60%));
+  }
+  .gradient-accent {
+    background: linear-gradient(135deg, hsl(153 58% 53%), hsl(170 60% 45%));
+  }
+  .gradient-hero {
+    background: linear-gradient(135deg, hsl(244 100% 97%), hsl(244 80% 94%), hsl(244 100% 97%));
+  }
+  .text-gradient-primary {
+    background: linear-gradient(135deg, hsl(244 98% 69%), hsl(270 80% 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .shadow-primary {
+    box-shadow: 0 10px 40px -10px hsl(244 98% 69% / 0.3);
+  }
+  .shadow-card {
+    box-shadow: 0 4px 20px -4px hsl(244 98% 69% / 0.1);
+  }
+  .glass {
+    background: hsl(var(--card) / 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .glass-nav {
+    background: hsl(var(--card) / 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
